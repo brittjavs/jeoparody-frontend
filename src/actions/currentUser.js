@@ -1,6 +1,5 @@
 //synchronous action creators
 export const setCurrentUser = user => {
-    console.log(user)
     return {
         type: "SET_CURRENT_USER",
         user
@@ -10,8 +9,9 @@ export const setCurrentUser = user => {
 //asynchronous action creators
 export const login = userInfo => {
     return dispatch => {
+        
         return fetch("http://localhost:3001/api/v1/login", {
-            // credentials: "include",
+            credentials: "include",
             //credentials aren't working yet
             method: "POST",
             headers: {
@@ -25,6 +25,30 @@ export const login = userInfo => {
                 alert(user.error)
             }
             else{
+                dispatch(setCurrentUser(user))
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+
+export const getCurrentUser = () => {
+    // console.log("get current user")
+    return dispatch => {
+        return fetch('http://localhost:3001/api/v1/get_current_user', {
+            credentials: "include",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+        .then(resp => resp.json())
+        .then(user => {
+            if (user.error){
+                alert(user.error)
+            }
+            else {
                 dispatch(setCurrentUser(user))
             }
         })
