@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Login from "./components/Login.js"
+import Logout from "./components/Logout.js"
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser"
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <header className="App-header">
           <h5>JeoParody Test</h5>
           <Login />
+          <Logout/>
         </header>
       </div>
     )
