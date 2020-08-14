@@ -1,22 +1,19 @@
 
 import React from 'react'
-import Login from '../components/Login'
-import Signup from '../components/Signup'
-import Logout from '../components/Logout'
-import { Route, Switch } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class NavBar extends React.Component {
     render(){
         return(
             <div>
-            <Switch>
-                {/* <Login /> */}
-                <Route exact path='/login' component={Login}/>
-                {/* <Signup /> */}
-                <Route exact path='/signup' component={Signup}/>
-                {/* <Logout /> */}
-                <Route exact path='/logout' component={Logout}/>
-            </Switch>
+            <button><NavLink exact activeClassName="active" to="/login">Login</NavLink></button>
+            <NavLink exact activeClassName="active"to="/signup">Signup</NavLink>
+
+            {/* Show only log out when current user is logged in */}
+            <NavLink exact activeClassName="active" to="/logout">Logout</NavLink>
+
+
+
             </div>
             
         )
