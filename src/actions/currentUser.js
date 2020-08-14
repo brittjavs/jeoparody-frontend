@@ -10,7 +10,7 @@ export const setCurrentUser = user => {
 
 export const signup = (credentials) => {    
     return dispatch => {
-        const newUserInfo = {
+        const newUser = {
             user: credentials
         }
         return fetch("http://localhost:3001/api/v1/signup", {
@@ -19,7 +19,7 @@ export const signup = (credentials) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newUserInfo)
+            body: JSON.stringify(newUser)
         })
             .then(resp => resp.json())
             .then(user => {
