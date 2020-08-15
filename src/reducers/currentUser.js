@@ -3,7 +3,8 @@ export default function currentUser (state = null, action){
         case "SET_CURRENT_USER":
             return action.user
         case "CLEAR_CURRENT_USER":
-            return state
+            return null
+            // this needs to be null because the state has user when logged in
         default:
             return state
     }
