@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from "./containers/NavBar"
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser"
+// import { withRouter } from 'react-router-dom'
+
 
 class App extends React.Component {
 
