@@ -19,8 +19,12 @@ class App extends React.Component {
         <header className="App-header">
           <h5>JeoParody Test</h5>
           <NavBar />
-          <Game />
         </header>
+        <main>
+          <div className="game-container">
+            <Game />
+          </div>
+        </main>
       </div>
     )
     

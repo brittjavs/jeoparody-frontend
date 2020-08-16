@@ -1,17 +1,7 @@
-.game-container{
-    width: 90%;
-    height: 80vh;
-    margin: 30px 0px 30px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(7, 0, 131);
+.game-content{
+    color: white;
 }
 
-button{
-    background: white;
-    outline: none;
-    border-radius: 100px;
-    width: 30%;
-    height: 50px;
+.game-content a{
+    color: white;
 }

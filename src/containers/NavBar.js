@@ -10,7 +10,7 @@ class NavBar extends React.Component {
         return(
             this.props.currentUser ? 
             <div className="logged-in-nav">
-                        <Logout />
+                <Logout />
             </div>
             :
             <div className="auth-nav">

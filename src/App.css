@@ -1,5 +1,5 @@
 
-.App-header {
+header {
   min-height: 10vh;
   font-size: calc(10px + 2vmin);
   color: rgb(7, 0, 131);
@@ -8,4 +8,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center
+}
+
+.game-container{
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(7, 0, 131);
+  color: white;
+  text-align: center;
 }

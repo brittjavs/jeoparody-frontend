@@ -4,7 +4,7 @@ class Categories extends React.Component {
     render(){
         return(
             <div className="categories-container">
-                Categories go here
+                <h2>Categories go here</h2>
             </div>
         )
     }
