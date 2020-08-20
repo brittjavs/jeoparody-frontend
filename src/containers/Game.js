@@ -5,9 +5,6 @@ import Categories from './Categories';
 
 class Game extends React.Component{
 
- 
-
-
     render(){
         return(
             <div className="game-content">
@@ -19,9 +16,6 @@ class Game extends React.Component{
                 </Switch>
                 
             </div>
-    
-    
-                    
 
         )
     }
