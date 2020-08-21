@@ -1,10 +1,14 @@
 import React from 'react'
 import {Route, Switch, NavLink} from 'react-router-dom';
 import './game.css'
-import Categories from './Categories';
+import CategoriesContainer from './CategoriesContainer';
+import { fetchCategories } from '../actions/categories'
+import { connect } from 'react-redux'
 
 class Game extends React.Component{
-
+    componentDidMount(){
+        this.props.fetchCategories()
+    }
     render(){
         return(
             <div className="game-content">
@@ -12,7 +16,7 @@ class Game extends React.Component{
                 <NavLink to="/categories">Start</NavLink>
                 
                 <Switch>
-                <Route exact path='/categories' component={Categories}/>
+                <Route exact path='/categories' component={CategoriesContainer}/>
                 </Switch>
                 
             </div>
@@ -20,4 +24,4 @@ class Game extends React.Component{
         )
     }
 }
-export default Game
+export default connect(null, {fetchCategories})(Game)

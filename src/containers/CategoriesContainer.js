@@ -1,16 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchCategories } from '../actions/categories'
-// const API = 'https://jservice.io/api/random?count=2'
+import Categories from '../components/Categories'
 
-class Categories extends React.Component {
-    componentDidMount(){
-        this.props.fetchCategories()
-    }
-    // fetchAPI = () => {  
-    //      fetch(API)
-    //         .then(resp => resp.json())
-    //         .then(data => {
+class CategoriesContainer extends React.Component {
+    
+  
                 // console.log("First random: ", data[0].category.id, data[0].category.title)
                 // console.log("Second random", data[1].category.id, data[1].category.title)
          
@@ -28,15 +22,18 @@ class Categories extends React.Component {
     // }
 
     render(){
-        // console.log(this.state)
+       
         return(
             <div className="categories-container">
                 <h2>Categories</h2>
-                <button>Category 1</button>
-                <button>Category 2</button>
+                <Categories categories={this.props.categories}/>
             </div>
         )
     }
 }
-
-export default connect(null, {fetchCategories})(Categories)
+const mapStateToProps = state => {
+    return {
+        categories: state.categories
+    }
+}
+export default connect(mapStateToProps)(CategoriesContainer)
