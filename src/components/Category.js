@@ -1,13 +1,13 @@
 import React from 'react'
 
 class Category extends React.Component {
-    
+
     render(){
         const { category } = this.props;
         
         return(
             <div className="category">
-                <button id={category.id}>{category.title}</button>
+                <h2 id={category.id}>{category.title}</h2>
             </div>
         )
     }
